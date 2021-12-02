@@ -7,12 +7,10 @@ LOGGER = logging.getLogger(__name__)
 
 def read_file(filename):
     LOGGER.debug(f"Reading {filename}")
-    values = []
 
+    values = []
     with open(filename) as fin:
-        for line in fin:
-            LOGGER.debug(f"Line contents: {line.strip()}")
-            values.append(int(line.strip()))
+        values = [int(x.strip()) for x in fin.readlines()]
 
     return values
 
@@ -37,7 +35,7 @@ def apply_window(values, window_size):
 @click.command()
 @click.option("--filename", help="Input file.")
 @click.option("--debug/--no-debug", default=False)
-def part_02(filename, debug):
+def main(filename, debug):
 
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
@@ -59,4 +57,4 @@ def part_02(filename, debug):
 
 if __name__ == "__main__":
 
-    part_02()
+    main()
