@@ -52,9 +52,10 @@ class Diagram:
             x_incr = 1 if p2.x > p1.x else -1
             y_incr = 1 if p2.y > p1.y else -1
             for i in range(abs(p2.x - p1.x) + 1):
-                LOGGER.debug(f"Adding 1 to cell [{p1.x + x_incr * i}][{p1.y + y_incr * i}]")
+                LOGGER.debug(
+                    f"Adding 1 to cell [{p1.x + x_incr * i}][{p1.y + y_incr * i}]"
+                )
                 self._diagram[p1.y + y_incr * i][p1.x + x_incr * i] += 1
-
 
     def count_greater_than(self, value):
         values = self._diagram.flatten()
