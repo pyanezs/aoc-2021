@@ -16,7 +16,6 @@ def read_file(filename):
 
 
 def number_of_increments(values):
-
     diffs = [b - a for a, b in zip(values[:-1], values[1:])]
     LOGGER.debug(f"Diffs: {diffs}")
 
@@ -26,7 +25,6 @@ def number_of_increments(values):
 
 
 def apply_window(values, window_size):
-
     return [
         values[i : min(i + window_size, len(values))] for i in range(0, len(values))
     ]
@@ -35,7 +33,7 @@ def apply_window(values, window_size):
 @click.command()
 @click.option("--filename", help="Input file.")
 @click.option("--debug/--no-debug", default=False)
-def main(filename, debug):
+def problem(filename, debug):
 
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
