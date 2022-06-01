@@ -81,7 +81,7 @@ class BingoGame:
 @click.command()
 @click.option("--filename", help="Input file.")
 @click.option("--debug/--no-debug", default=False)
-def main(filename, debug):
+def solve(filename, debug):
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
         format="%(levelname)s - %(message)s",
@@ -100,4 +100,5 @@ def main(filename, debug):
 
 
 if __name__ == "__main__":
-    main()
+    solve()
+

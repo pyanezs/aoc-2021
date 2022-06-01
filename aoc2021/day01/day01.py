@@ -33,7 +33,7 @@ def apply_window(values, window_size):
 @click.command()
 @click.option("--filename", help="Input file.")
 @click.option("--debug/--no-debug", default=False)
-def problem(filename, debug):
+def solve(filename, debug):
 
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
@@ -54,5 +54,4 @@ def problem(filename, debug):
 
 
 if __name__ == "__main__":
-
-    main()
+    solve()

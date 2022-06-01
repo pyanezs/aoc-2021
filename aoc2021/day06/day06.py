@@ -33,7 +33,7 @@ class School:
 
 @click.command()
 @click.option("--debug/--no-debug", default=False)
-def main(debug):
+def solve(debug):
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
         format="%(levelname)s - %(message)s",
@@ -350,4 +350,4 @@ def main(debug):
 
 
 if __name__ == "__main__":
-    main()
+    solve()
