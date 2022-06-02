@@ -28,7 +28,7 @@ class School:
         new[-1] = 0
 
         self._days_till_spawn = {k: v for k,v in new.items()}
-        LOGGER.info(f"After {self.days} days Total Fish: {sum(new.values())}")
+        LOGGER.debug(f"After {self.days} days Total Fish: {sum(new.values())}")
 
 
 @click.command()

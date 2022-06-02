@@ -34,6 +34,7 @@ def get_fuel_cost_p2(crabs, position):
 @click.option("--filename", help="Input file.")
 @click.option("--debug/--no-debug", default=False)
 def solve(filename, debug):
+
     logging.basicConfig(
         level=logging.DEBUG if debug else logging.INFO,
         format="%(levelname)s - %(message)s",
